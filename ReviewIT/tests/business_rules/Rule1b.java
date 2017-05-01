@@ -2,24 +2,18 @@ package business_rules;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import model.Conference;
 import model.ErrorException;
 import model.Paper;
-import model.UserProfile;
 /**
  * Test unit testing business rule 1b of the ReviewIt application. 
  * Business Rule 1b:
@@ -60,22 +54,28 @@ public class Rule1b {
 		int subLimit = 5;
 		int assLimit = 8;		
         format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");        
-        deadline = format.parse("2017/04/30 23:59:59");
+        deadline = format.parse("2117/12/30 23:59:59");
         
 		testCon = Conference.createConference(conName, deadline, subLimit,assLimit);
 		
 		testPaper1 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})),
+				"Test Title", testUID);
 		testPaper2 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})),
+				"Test Title", testUID);
 		testPaper3 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), 
+				"Test Title", testUID);
 		testPaper4 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), 
+				"Test Title", testUID);
 		testPaper5 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), 
+				"Test Title", testUID);
 		testPaper6 = Paper.createPaper(new File(""), 
-				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), "Test Title", testUID);
+				new ArrayList<>(Arrays.asList(new String[]{"John Doe", "Some Coauthor"})), 
+				"Test Title", testUID);
 		testPaperList.add(testPaper1);
 		testPaperList.add(testPaper2);
 		testPaperList.add(testPaper3);
